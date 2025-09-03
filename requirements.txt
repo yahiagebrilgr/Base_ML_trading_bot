@@ -1,0 +1,8 @@
+lumibot
+py-timedelta
+pandas
+pandas-ta
+python-dotenv
+alpaca-py
+transformers
+torch  
