@@ -17,12 +17,12 @@ The bot reads financial news and tries to trade based on the overall mood. If th
 
 Here’s a breakdown of how the different files work together:
 
-Startup & Setup (trading_bot_base.py):The main script starts up and securely loads my secret Alpaca API keys from the local .env file.
+- Startup & Setup (trading_bot_base.py):The main script starts up and securely loads my secret Alpaca API keys from the local .env file.
 Data Gathering (trading_bot_base.py): The bot connects to the Alpaca API to fetch two key things, the latest price data for a stock (ex. Lloyds Bank) and a list of recent news headlines related to it.
-Sentiment Analysis (finbert_utils.py): This is where the AI comes in. The collected headlines are passed over to the finbert_utils.py script which uses the powerful FinBERT model. This model is specifically trained on financial text to read and score the sentiment of the headlines. It returns the overall sentiment (neutral, positive, negative) and a confidence score.
-Trade Decision (trading_bot_base.py): Back in the main script, the bot checks the sentiment. If the model's confidence is above a certain threshold (e.g., 95% sure), it decides to make a trade. It also checks to make sure it closes any old positions before opening a new one.
-Risk Management (trading_bot_base.py): Before placing a trade, the bot calculates the Average True Range (ATR) of the stock. This tells it how volatile the stock has been recently. It uses the ATR to automatically set a stop-loss and a take-profit level, which is a simple way to manage risk without manual intervention.
-Backtesting: Finally, the script uses the lumibot library to run this entire strategy on historical data (from 2022-2023) to see how it would have performed in the past.
+- Sentiment Analysis (finbert_utils.py): This is where the AI comes in. The collected headlines are passed over to the finbert_utils.py script which uses the powerful FinBERT model. This model is specifically trained on financial text to read and score the sentiment of the headlines. It returns the overall sentiment (neutral, positive, negative) and a confidence score.
+- Trade Decision (trading_bot_base.py): Back in the main script, the bot checks the sentiment. If the model's confidence is above a certain threshold (e.g., 95% sure), it decides to make a trade. It also checks to make sure it closes any old positions before opening a new one.
+- Risk Management (trading_bot_base.py): Before placing a trade, the bot calculates the Average True Range (ATR) of the stock. This tells it how volatile the stock has been recently. It uses the ATR to automatically set a stop-loss and a take-profit level, which is a simple way to manage risk without manual intervention.
+- Backtesting: Finally, the script uses the lumibot library to run this entire strategy on historical data (from 2022-2023) to see how it would have performed in the past.
 
 How to Run the Project
 Follow these steps to run a backtest of the strategy.
