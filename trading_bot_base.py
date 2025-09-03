@@ -6,19 +6,19 @@ from lumibot.strategies.strategy import Strategy
 from lumibot.traders import Trader
 from datetime import datetime
 from timedelta import Timedelta
-import pandas_ta as ta # Added for ATR calculation
+import pandas_ta as ta 
 import pandas as pd
 import os
-from dotenv import load_dotenv # New library to load .env file
+from dotenv import load_dotenv 
 
 # Import the newer Alpaca library components
 from alpaca.trading.client import TradingClient
 from alpaca.data.requests import NewsRequest
 
-# Import our sentiment analysis utility
+# Imports the sentiment analysis utility
 from finbert_utils import estimate_sentiment
 
-# Load the API keys from our new .env file
+# Loads the API keys from the .env file
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
 API_SECRET = os.getenv("API_SECRET")
@@ -84,7 +84,7 @@ class MLTrader(Strategy):
             start=pd.Timestamp(three_days_prior),
             end=pd.Timestamp(today)
         )
-        # We also wrap this in a try-except block
+        # We also wrap this in a try-except block, safety feature :)
         try:
             news = self.api.get_news(news_request) # Fetch news articles for the stock
             headlines = [item.headline for item in news] # Extract just the headlines from the news data
@@ -103,7 +103,7 @@ class MLTrader(Strategy):
 
         cash, quantity = self.position_sizing(last_price)
         probability, sentiment = self.get_sentiment()
-        # Same check here, if sentiment analysis failed, we stop
+        # Same check here, if sentiment analysis failed, it stops
         if sentiment is None:
             return
 
@@ -168,4 +168,5 @@ if __name__ == "__main__":
         start_date,
         end_date,
         parameters={"symbol": "LLOY.L", "cash_at_risk": .5, "sentiment_threshold": 0.95}
+
     )
