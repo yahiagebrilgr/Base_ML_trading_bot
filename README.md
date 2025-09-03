@@ -49,10 +49,10 @@ python trading_bot_base.py
 Future Improvements & Next Steps:
 This bot was a great learning exercise, but it's still very simple. If I were to continue developing it, here are the next steps I would take:
 
-(1) Add More Signals: Right now, the bot only listens to sentiment. I could combine this with the moving average crossover strategy from my previous project. A new rule might be, "only buy if sentiment is positive AND the short-term trend is above the long-term trend."
-(2) Use More News Sources: The bot currently relies only on the news feed provided by Alpaca. To get a better signal, I could integrate other free sources like RSS feeds from major financial news websites.
-(3) Expand to Multiple Stocks: The bot only trades one stock at a time. A more advanced version would scan the news for a whole list of stocks and decide which one has the strongest sentiment signal to trade.
-(4) Live Paper Trading: The final step would be to switch from backtesting to live paper trading to see how the bot performs in real-time market conditions.
+- Add More Signals: Right now, the bot only listens to sentiment. I could combine this with the moving average crossover strategy from my previous project. A new rule might be, "only buy if sentiment is positive AND the short-term trend is above the long-term trend."
+- Use More News Sources: The bot currently relies only on the news feed provided by Alpaca. To get a better signal, I could integrate other free sources like RSS feeds from major financial news websites.
+- Expand to Multiple Stocks: The bot only trades one stock at a time. A more advanced version would scan the news for a whole list of stocks and decide which one has the strongest sentiment signal to trade.
+- Live Paper Trading: The final step would be to switch from backtesting to live paper trading to see how the bot performs in real-time market conditions.
 
 Thanks, 
 Yahia
