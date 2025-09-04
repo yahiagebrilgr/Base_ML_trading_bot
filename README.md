@@ -28,21 +28,19 @@ How to Run the Project
 Follow these steps to run a backtest of the strategy.
 
 1. Get the code
-Clone the repository to your local machine.
+- Clone the repository to your local machine.
 
 2. Set Up your API Keys
-You'll need a free paper trading account from Alpaca.
-Rename the env.example file to .env.
-Open the .env file and add your paper trading API key and secret.
+- You'll need a free paper trading account from Alpaca.
+- Rename the env.example file to .env.
+- Open the .env file and add your paper trading API key and secret.
 
 3. Install Dependencies
-It's best to use a virtual environment for this, so not to cause any problems on your machine. Have AI help you with this. Install all the required libraries with this command in the terminal:
-
+- It's best to use a virtual environment for this, so not to cause any problems on your machine. Have AI help you with this. Install all the required libraries with this command in the terminal:
 pip install -r requirements.txt
 
 4. Run the Backtest
-To run the backtest on Lloyds Bank stock (LLOY.L) for the years 2022-2023, just run the main script:
-
+- To run the backtest on Lloyds Bank stock (LLOY.L) for the years 2022-2023, just run the main script:
 python trading_bot_base.py
 
 
