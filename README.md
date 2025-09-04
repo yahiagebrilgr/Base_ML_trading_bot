@@ -1,18 +1,18 @@
-An AI Trading Bot Using News Sentiment
+An AI trading bot using news sentiment
 
-Aim of the Project
+Aim of the project
 The aim of this project is to build a fully functional, automated trading bot from the ground up with the help of open source libraries. This is my third project and it builds directly on the skills from my last two, "Backtesting a Dual Moving Average Crossover Strategy" and "UK Market Sentiment Analysis."
 
 Previously, I learned how to backtest a simple strategy and analyse market sentiment. This time, the goal was to combine those ideas and take it a step further by asking whether I could use a sophisticated Machine Learning model to analyse real-time news and make autonomous trading decisions.
 
-My Learning Objectives:
+My learning objectives:
 The main goal here was learning and practice. I wanted to see if I could:
 - Integrate a real ML model by moving beyond theory and using a powerful, pre-trained NLP model (FinBERT) in a practical application.
 - Work with a live API, learning how to connect to a real trading platform (Alpaca) to get market data, fetch news, and place trades.
 - Combine different signals instead of just relying on sentiment. I wanted to add a layer of risk management by using a technical indicator (Average True Range - ATR) to set dynamic stop-losses.
 - Build a multi-file project to practice structuring my code in a cleaner way, with different parts of the logic separated into their own files.
 
-How The Bot Works
+How the bot works:
 The bot reads financial news and tries to trade based on the overall mood. If the news is very positive, it buys. If it's very negative, it sells (or shorts).
 
 Here’s a breakdown of how the different files work together:
@@ -27,10 +27,10 @@ Data Gathering (trading_bot_base.py): The bot connects to the Alpaca API to fetc
 How to Run the Project
 Follow these steps to run a backtest of the strategy.
 
-1. Get the Code
+1. Get the code
 Clone the repository to your local machine.
 
-2. Set Up Your API Keys
+2. Set Up your API Keys
 You'll need a free paper trading account from Alpaca.
 Rename the env.example file to .env.
 Open the .env file and add your paper trading API key and secret.
@@ -46,7 +46,7 @@ To run the backtest on Lloyds Bank stock (LLOY.L) for the years 2022-2023, just 
 python trading_bot_base.py
 
 
-Future Improvements & Next Steps:
+Future improvements & next steps:
 This bot was a great learning exercise, but it's still very simple. If I were to continue developing it, here are the next steps I would take:
 
 - Add More Signals: Right now, the bot only listens to sentiment. I could combine this with the moving average crossover strategy from my previous project. A new rule might be, "only buy if sentiment is positive AND the short-term trend is above the long-term trend."
